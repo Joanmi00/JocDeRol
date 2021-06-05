@@ -1,6 +1,6 @@
 package joc;
 
-public class Player {
+public abstract class Player {
     private String name;
     private int attackPoints;
     private int defensePoints;
@@ -17,37 +17,38 @@ public class Player {
 
         System.out.println(" ");
         System.out.println("ANTES DEL ATAQUE");
-        System.out.println(" ");
+        System.out.println("----------------------------------------------------------");
         System.out.println("Atacante: "+ this);
         System.out.println("Atacado: "+ p);
         System.out.println("");
+        System.out.println("ATAQUE:");
+        System.out.println("----------------------------------------------------------");
+
 
         p.hit(this.getAttackPoints());
+
         if (p.life>0){
             this.hit(p.getAttackPoints());
         }
 
         System.out.println(" ");
         System.out.println("DESPUES DEL ATAQUE");
-        System.out.println(" ");
+        System.out.println("----------------------------------------------------------");
         System.out.println("Atacante: "+ this);
         System.out.println("Atacado: "+ p);
-        System.out.println(" ");
     }
 
     protected void hit(int attackPoints){
         int defensa=this.getDefensePoints();
         int vida=this.getLife();
-        int atacat=attackPoints - defensa;
-        int vi=vida-atacat;
+        int atac=attackPoints - defensa;
+        int vi=vida-atac;
 
         if (vi <= 0){
-            System.out.println("MORT!!");
+            System.out.println("HA MUERTO!!");
             vi = 0;
         }else{
-            System.out.println("ATAQUE");
-            System.out.println(" ");
-            System.out.println(this.getName() + " es golpeado con "+ attackPoints + " puntos y se defiende con " + defensa + ". Vida: " + vida + " - " + atacat + " = " + vi);
+            System.out.println(this.getName() + " es golpeado con "+ attackPoints + " puntos y se defiende con " + defensa + ". Vida: " + vida + " - " + atac + " = " + vi);
         }
         this.setLife(vi);
     }
