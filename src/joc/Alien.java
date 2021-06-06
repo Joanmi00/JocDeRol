@@ -13,12 +13,14 @@ public class Alien extends Player{
 
         System.out.println(" ");
         System.out.println("ANTES DEL ATAQUE");
-        System.out.println("----------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------------------");
+
         System.out.println("Atacante: "+ this);
         System.out.println("Atacado: "+ p);
         System.out.println("");
         System.out.println("ATAQUE:");
-        System.out.println("----------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------------------");
+
 
         if(this.getLife() > 20){
             this.setAttackPoints(this.getAttackPoints()+3);
@@ -32,7 +34,7 @@ public class Alien extends Player{
         }
         System.out.println(" ");
         System.out.println("DESPUES DEL ATAQUE");
-        System.out.println("----------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------------------");
         System.out.println("Atacante: "+ this);
         System.out.println("Atacado: "+ p);
     }
