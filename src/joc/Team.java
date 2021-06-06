@@ -25,18 +25,6 @@ public class Team {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
-
     public boolean equals(Team t) {
         if (this.name.compareTo(t.name) == 0 && this.players == t.players){
             return true;
